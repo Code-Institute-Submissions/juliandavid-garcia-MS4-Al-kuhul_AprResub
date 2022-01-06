@@ -9,7 +9,14 @@ body {
     color: #555;
     font-family: 'Lato';
 }
-
+.marg{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    margin-left: -63%;
+    margin-top: 40%;
+}
 /* from Bulma */
 .icon {
     align-items: center;
@@ -31,6 +38,7 @@ body {
     background: black;
     color: white;
     min-width: 260px;
+    margin-left: -8%;
 }
 
 .btn-black {
@@ -56,6 +64,7 @@ body {
     border: 1px solid black !important;
 }
 
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -78,4 +87,74 @@ body {
     .header-container {
         padding-top: 164px;
     }
+}
+
+@media (max-width: 992px){
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 112px;
+    margin-top: 385px;
+    border-radius: 10px;
+}
+}
+
+@media only screen and (width: 768px) {
+.marg {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    margin-left: -2%;
+    margin-top: 40%;
+
+    
+}
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 112px;
+    margin-top: 213px;
+    border-radius: 10px;
+    margin-left: 10%;
+}
+#home-text{
+    display: none !important;
+}
+}
+@media only screen and (width: 1024px) {
+.marg {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    margin-left: -30%;
+    margin-top: 54px;
+}
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 112px;
+    margin-top: 5%;
+    border-radius: 10px;
+    margin-left: 19%;
+}
+}
+
+
+@media only screen and (width: 1280px) {
+ a .shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+    margin-left: -9%;
+}
+.marg {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    margin-left: -63%;
+    margin-top: 0%;
+}
 }
