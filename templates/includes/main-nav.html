@@ -13,51 +13,51 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wines
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Red Wine</a>
-                <a href="" class="dropdown-item">White Wine</a>
-                <a href="" class="dropdown-item">Rose</a>
-                <a href="" class="dropdown-item">All Wines</a>
+            <div class="dropdown-menu border-0" aria-labelledby="wines-link">
+                <a href="{% url 'products' %}?category=red wine"  class="dropdown-item">Red Wine</a>
+                <a href="{% url 'products' %}?category=white wine" class="dropdown-item">White Wine</a>
+                <a href="{% url 'products' %}?category=rose" class="dropdown-item">Rose</a>
+                <a href="{% url 'products' %}?category=red wine,white wine,rose" class="dropdown-item">All Wines</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="beers-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Beers
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Blond</a>
-                <a href="" class="dropdown-item">White</a>
-                <a href="" class="dropdown-item">Dark</a>
-                <a href="" class="dropdown-item">Pilsen</a>
-                <a href="" class="dropdown-item">All Wines</a>
+            <div class="dropdown-menu border-0" aria-labelledby="beers-link">
+                <a href="{% url 'products' %}?category=blond beer" class="dropdown-item">Blond</a>
+                <a href="{% url 'products' %}?category=white beer" class="dropdown-item">White</a>
+                <a href="{% url 'products' %}?category=dark beer" class="dropdown-item">Dark</a>
+                <a href="{% url 'products' %}?category=pilsen beer" class="dropdown-item">Pilsen</a>
+                <a href="{% url 'products' %}?category=blond beer,white beer,dark beer,pilsen beer" class="dropdown-item">All Beers</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="spirits-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Spirits
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Rum</a>
-                <a href="" class="dropdown-item">Vodka</a>
-                <a href="" class="dropdown-item">Whiskey</a>
-                <a href="" class="dropdown-item">Cognac</a>
-                <a href="" class="dropdown-item">All Spirits</a>
+            <div class="dropdown-menu border-0" aria-labelledby="spirits-link">
+                <a href="{% url 'products' %}?category=rum" class="dropdown-item">Rum</a>
+                <a href="{% url 'products' %}?category=vodka" class="dropdown-item">Vodka</a>
+                <a href="{% url 'products' %}?category=whiskey" class="dropdown-item">Whiskey</a>
+                <a href="{% url 'products' %}?category=cognac" class="dropdown-item">Cognac</a>
+                <a href="{% url 'products' %}?category=rum,vodka,whiskey,cognac" class="dropdown-item">All Spirits</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-regular nav-link text-black mr-5" href="#" id="others-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Others
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item"></a>
-                <a href="" class="dropdown-item">Tequilla</a>
-                <a href="" class="dropdown-item">Liqueurs</a>
+            <div class="dropdown-menu border-0" aria-labelledby="others-link">
+                <a href="{% url 'products' %}?category=tequila" class="dropdown-item">Tequila</a>
+                <a href="{% url 'products' %}?category=liqueur" class="dropdown-item">Liqueurs</a>
+                <a href="{% url 'products' %}?category=tequila,liqueur" class="dropdown-item">All Others</a>
             </div>
         </li>
 
