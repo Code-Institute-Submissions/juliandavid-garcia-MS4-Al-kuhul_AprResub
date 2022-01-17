@@ -1,2 +1,2 @@
 
-web: gunicorn al-kuhul.wsgi:application
+web: gunicorn al_kuhul.wsgi:application
