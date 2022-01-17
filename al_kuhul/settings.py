@@ -131,7 +131,6 @@ if 'DATABASE_URL' in os.environ:#
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-}
 # Password validatio
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
