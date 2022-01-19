@@ -60,6 +60,38 @@
 
 
 
-## 1. 3  [Wireframes ](/wireframes-images/wireframes.jpg)
-[See Wireframes ](/wireframes-images/wireframes.jpg)
+## 1. 3  [Wireframes ](/wireframes/MS4.png)
+[See Wireframes ](/wireframes/MS4.png)
 <span id="Wireframes"></span>
+
+## 1.4 Design
+<span id="Design"></span>
+
+## 2. Features
+<span id="Features"></span>
+
+## 3. Technologies used
+<span id="Technologies"></span>
+
+## 4. Testing
+<span id="Testing"></span>
+
+## 5.  Deployment
+<span id=" Deployment"></span>
+
+##  6. Credits
+<span id="Credits"></span>
+https://www.youtube.com/watch?v=jSOKrzOKRoI
+django admin name change 
+
+## 7. Media
+<span id="Media"></span>
+
+## 8. Acknowledgements
+<span id="Acknowledgements"></span>
+
+## 9. Github
+<span id="Github"></span>
+
+
+
