@@ -121,6 +121,16 @@ a.category-badge > span.badge:hover {
 .remove-item {
     cursor: pointer;
 }
+a {
+    color: #040404;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: #636262;
+    text-decoration: none;
+    background-color: transparent;
+}
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -187,6 +197,10 @@ a.category-badge > span.badge:hover {
     overflow-x: hidden;
     overflow-y: auto;
 }
+.border-info {
+    border-color: #0000!important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
