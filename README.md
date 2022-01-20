@@ -221,9 +221,23 @@ And freeze that into our requirements file.**
 ![folder name](/Readme_images/14-gunicorn-n-freeze.JPG)
 
 - **Create an Procfile add add a web dyno.
-Which will run unicorn and serve our django app.** 
+Which will run gunicorn and serve our django app. eventually login heroku** 
 
 ![folder name](/Readme_images/15-procfile.JPG)
+
+- **By using Heroku config set, disable collectstatic equals 1
+So that Heroku won't try to collect static files when we deploy.** 
+
+![folder name](/Readme_images/16-disabel-collecstatic.JPG)
+
+- **Add the hostname of our Heroku app to allowed hosts in settings.py** 
+
+![folder name](/Readme_images/17-Allowed-HOST.JPG)
+
+- **Commit, push and git push heroku main** 
+
+![folder name](/Readme_images/)
+
 
 ##  6. Credits
 <span id="Credits"></span>
