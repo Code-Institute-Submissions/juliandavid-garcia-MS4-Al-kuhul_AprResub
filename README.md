@@ -190,11 +190,11 @@ And give it the database URL from Heroku**
 
 ![folder name](/Readme_images/7-Database.JPG)
 
-- **The  DATABASE URL is located in Heroku settings ** 
+- **The  DATABASE URL is located in Heroku settings** 
 
 ![folder name](/Readme_images/8-database_url_key.JPG)
 
-- **Migrate the changes to set up the database ** 
+- **Migrate the changes to set up the database** 
 
 ![folder name](/Readme_images/9-migrations.JPG)
 
@@ -202,6 +202,28 @@ And give it the database URL from Heroku**
 
 ![folder name](/Readme_images/10-loaddata.JPG)
 
+
+- **Create a super user** 
+
+![folder name](/Readme_images/11-superuser.JPG)
+
+- **Remove Heroku database config from setting and uncomment the original so our database URL doesn't end up in version control.** 
+
+![folder name](/Readme_images/12-data-remove.JPG)
+
+- **Use an if statement in settings.py So that when our app is running on Heroku where the database URL environment variable will be defined. We connect to Postgres and otherwise, we connect to sequel light.** 
+
+![folder name](/Readme_images/13-data-if-stament.JPG)
+
+- **Install gunicorn, which will act as our webserver.
+And freeze that into our requirements file.** 
+
+![folder name](/Readme_images/14-gunicorn-n-freeze.JPG)
+
+- **Create an Procfile add add a web dyno.
+Which will run unicorn and serve our django app.** 
+
+![folder name](/Readme_images/15-procfile.JPG)
 
 ##  6. Credits
 <span id="Credits"></span>
