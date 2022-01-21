@@ -17,8 +17,11 @@ body {
     margin-left: -63%;
     margin-top: 40%;
 }
-.marg-top{
-margin-top: 30%;
+.display-1 {
+    font-size: calc(1.625rem + 4.5vw);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 30%;
 }
 /* from Bulma */
 .icon {
@@ -203,14 +206,8 @@ a:hover{
 .border-info {
     border-color: #0000!important;
 }
-.text-center h1{
-    margin-top: 30%;
-}
-.display-1 {
-    font-size: calc(1.625rem + 4.5vw);
-    font-weight: 300;
-    line-height: 1.2;
-    margin-top: 30%;
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
