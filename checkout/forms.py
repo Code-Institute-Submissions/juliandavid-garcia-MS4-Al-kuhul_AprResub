@@ -39,3 +39,4 @@ class OrderForm(forms.ModelForm):
             self.fields[field].label = False
             self.fields['phone_number'].widget.attrs['class'] = 'number'
             self.fields['full_name'].widget.attrs['class'] = 'letters'
+            self.fields['town_or_city'].widget.attrs['class'] = 'letters'
