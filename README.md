@@ -179,7 +179,7 @@ This website was designed using some of html and css features from the template 
 
 - [startbootstrap.com/templates/ecommerce](https://startbootstrap.com/templates/ecommerce)
 
-The icons where taken from:
+The icons were taken from:
 - [Font awesome](https://fontawesome.com/icons)
 
 All the product images were taken from the online shop: 
@@ -195,6 +195,7 @@ All the product images were taken from the online shop:
 <span id="Media"></span>
 All the product images were taken from the online shop: 
  - [Bienmanger](https://www.bienmanger.com/)
+ 
 ## 8. Acknowledgements
 <span id="Acknowledgements"></span>
 - I received inspiration for this project from the previous project(boutique_ado) covered in the previous unit as well from different online shops as [Bienmanger](https://www.bienmanger.com/)
