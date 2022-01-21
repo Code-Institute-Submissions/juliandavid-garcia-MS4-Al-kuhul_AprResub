@@ -200,8 +200,11 @@ All the product images were taken from the online shop:
 - I received inspiration for this project from the previous project(boutique_ado) covered in the previous unit as well from different online shops as [Bienmanger](https://www.bienmanger.com/)
 
 - Thanks to Precious Ijege for his mentoring while developing this project. His advices, patience and support were of high relevance to carry out this project.
+
 ## 9. Github
 <span id="Github"></span>
+You can find this project on 
+[My Github](https://github.com/juliandavid-garcia)
 
 
 
