@@ -1,4 +1,4 @@
-### 5.3 **Heroku deployment**
+### 5.1 **Heroku deployment**
 - **Go to Heroku.com, log in and create a new app**
 
 ![folder name](/Readme_images/1-create-app.JPG)

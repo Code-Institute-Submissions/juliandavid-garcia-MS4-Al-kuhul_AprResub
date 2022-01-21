@@ -96,42 +96,42 @@ The defensive design on this site relays on the Djiango built-in models which ma
 ## 2. Features
 <span id="Features"></span>
 
-2.1. Existing features
+### 2.1. Existing features
 
-2.1.1 Home:
+2.1.1 **Home:**
 The home page counts with an image that welcomes the visitors introducing them to what they will find in the site.  
 
-2.1.2 Navigation bar:
+2.1.2 **Navigation bar:**
 This website has a navigation bar that displays different features depending on the actions te user takes. If a user registers and logs in, then the features from the navigation bar will be different from those who do not do it. A first time visitor will only find in the Nabvar the chance to register and login. And if they sign up they navbar will display some other hidden links reserved to members. On this navbar the administrato will have the chance to manage and keep updated the products of the store.
 
-2.1.3 Register:
+2.1.3 **Register:**
 On this feature users can create an account adding a user name and a password
 
-2.1.4 Log In:
+2.1.4 **Log In:**
 Through this feature user access to the content reserved to those who have an account.
 
-2.1.5 Profile:
+2.1.5 **Profile:**
 Is a page that contains some information from the user, as well as, the history of the purchases made. 
 
-2.1.6 log Out:
+2.1.6 **log Out:**
 When cliking on this option the user leaves his/her account, having access only to the home page. It means they are not allowed to add, edit or erase any recipe.
 
-2.1.7 Product Management:
+2.1.7 **Product Management:**
 All administravie users have the chance to add new products to the page through a form linked to the dababase in order to keep it updated.
 
-2.1.8 Search bar:
+2.1.8 **Search bar:**
 In order to help users to easily find a product there is a search bar located in the header of the home page in which they can type the term needed and it will be filtered and displayed in the screen.
 
-2.1.9 Categories:
+2.1.9 **Categories:**
 This features helps the user to sort the products by certain categories as price, rate.
 
-2.2.0 Age filter: 
+2.2.0 **Age filter:** 
 to enter the site the users are asked their age in order to let them have access to the site. 
 
-2.2.1 stripe:
+2.2.1 **Stripe:**
 users can complete their purchase paying online thanks to stipe which is the software which handle the payments.
 
-2.2.2 Email confirmation: 
+2.2.2 **Email confirmation:**
 After every purchase the users will recieve a confirmation E-mail with the information of the transaction.
 
 ## 3. Technologies used
@@ -160,9 +160,9 @@ This website was built using:
 ## 5.  Deployment
 <span id=" Deployment"></span>
 
-### 5.3 **Heroku deployment**
-[Check Deployment steps](/Readme_files/deployment_heroku.md)
-
+- [5.1 Heroku Deployment](/Readme_files/deployment_heroku.md)
+- [5.2 Hosting static and media files with AWS](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
+- [5.3 Heroku Deployment](/Readme_files/deployment_heroku.md)
 
 
 ##  6. Credits
