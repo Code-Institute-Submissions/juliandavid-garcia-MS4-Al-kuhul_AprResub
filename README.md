@@ -9,6 +9,9 @@
 - <a href="#Technologies">3. Technologies used</a>
 - <a href="#Testing">4. Testing</a>
 - <a href="#Deployment">5. Deployment</a>
+  - <a href="#heroku_Deployment">5.1 Heroku Deployment</a>
+  - <a href="#AWS">5.2 Hosting statics</a>
+  - <a href="#Clonning">5.3 To Clone</a>
 - <a href="#Credits">6. Credits</a>
 - <a href="#Media">7. Media</a>
 - <a href="#Acknowledgements">8. Acknowledgements</a>
@@ -161,21 +164,42 @@ This website was built using:
 <span id=" Deployment"></span>
 
 - [5.1 Heroku Deployment](/Readme_files/deployment_heroku.md)
+<span id="heroku_Deployment"></span>
+
 - [5.2 Hosting static and media files with AWS](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
-- [5.3 Heroku Deployment](/Readme_files/deployment_heroku.md)
+<span id="AWS"></span>
+
+- [5.3 Github Clonning](/Readme_files/cloning_guthub.md)
+<span id="Clonning"></span>
 
 
 ##  6. Credits
 <span id="Credits"></span>
-https://www.youtube.com/watch?v=jSOKrzOKRoI
-django admin name change 
+This website was designed using some of html and css features from the template [ecommerce](https://startbootstrap.com/templates/ecommerce)
+
+- [startbootstrap.com/templates/ecommerce](https://startbootstrap.com/templates/ecommerce)
+
+The icons where taken from:
+- [Font awesome](https://fontawesome.com/icons)
+
+All the product images were taken from the online shop: 
+ - [Bienmanger](https://www.bienmanger.com/)
+
+ The data base used for his porject was AWS :
+ - [AWS](https://www.AWS.com/)
+
+ The Payment method used in this site is :
+ - [Stripe](https://www.stripe/com) 
 
 ## 7. Media
 <span id="Media"></span>
-
+All the product images were taken from the online shop: 
+ - [Bienmanger](https://www.bienmanger.com/)
 ## 8. Acknowledgements
 <span id="Acknowledgements"></span>
+- I received inspiration for this project from the previous project(boutique_ado) covered in the previous unit as well from different online shops as [Bienmanger](https://www.bienmanger.com/)
 
+- Thanks to Precious Ijege for his mentoring while developing this project. His advices, patience and support were of high relevance to carry out this project.
 ## 9. Github
 <span id="Github"></span>
 
