@@ -1,4 +1,4 @@
-<h1> Information Architecture</h1>
+<h1> Models</h1>
 
 <span id="database"></span>
 
