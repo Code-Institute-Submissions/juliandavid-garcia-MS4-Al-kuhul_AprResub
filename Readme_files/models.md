@@ -76,23 +76,8 @@
  Quantity | quantity | IntegerField | null=False, blank=False
  Lineitem total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 
-#### 4. Contact app 
-#### ContactMessage model
 
-| **Name** | **Database Key** | **Field Type** | **Validation** |
---- | --- | --- | --- 
- Full name | full_name | CharField | max_length=50
- Email| email| EmailField | 
- Message | message| TextField | 
-
-#### 5. Newsletter app 
-#### Subscribe model
-
-| **Name** | **Database Key** | **Field Type** | **Validation** |
---- | --- | --- | --- 
- Email | email| EmailField | max_length=255
- Timestamp | timestamp | DateTimeField | auto_now_add=True
 
 <div align="right">
-    <a href="#breaktasty">↥ Back to top!</a>
+    <a href="">To The Top!</a>
 </div>
