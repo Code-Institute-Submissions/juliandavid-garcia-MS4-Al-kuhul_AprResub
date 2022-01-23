@@ -137,6 +137,17 @@ a:hover{
     text-decoration: none;
     background-color: transparent;
 }
+.card-header{
+    background-color: rgb(121, 118, 118);
+  
+    
+}
+.card{
+    border-radius: 9px;
+}
+.card-header:first-child {
+    border-radius: 9px 9px 0px 0px;
+}
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

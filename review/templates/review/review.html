@@ -1,25 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
- <!-- Categories widget-->
- <div class="card mb-4">
-    <div class="card-header">Categories</div>
-    <div class="card-body">
+{% block page_header %}
+    <div class="container header-container">
         <div class="row">
-            <div class="col-sm-6">
-                <ul class="list-unstyled mb-0">
-                    <li><a href="#!">Web Design</a></li>
-                    <li><a href="#!">HTML</a></li>
-                    <li><a href="#!">Freebies</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <ul class="list-unstyled mb-0">
-                    <li><a href="#!">JavaScript</a></li>
-                    <li><a href="#!">CSS</a></li>
-                    <li><a href="#!">Tutorials</a></li>
-                </ul>
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">review</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="#!">{{review.Review}}</a></li>
+                                <li><a href="#!">by</a></li>
+                                <li><a href="#!">product</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
