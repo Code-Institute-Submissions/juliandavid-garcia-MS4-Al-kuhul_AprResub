@@ -11,5 +11,10 @@ class Review(models.Model):
                                      null=True, blank=True, related_name='Review')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     review = models.TextField(max_length=400, null=False, blank=False)
+
+    def __str__(self):
+        return str(self.user_profile)
+
+        
     
 

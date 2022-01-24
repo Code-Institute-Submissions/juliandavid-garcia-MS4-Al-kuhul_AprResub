@@ -1,15 +1,18 @@
-from django.shortcuts import render
-from .models import Review
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 
+from .forms import ReviewForm
 # Create your views here.
 
 def review(request):
-    """ A view to return the review page """
-    reviews = Review.objects.all()
+
+    review_form = ReviewForm()
+    template = 'review/review.html'
     context = {
-        'reviews': reviews
+        'review_form': review_form,
     }
-    return render(request, 'review/review.html', context)
+
+    return render(request, template, reverse, context)
 
   
     

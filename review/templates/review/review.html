@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -10,25 +15,77 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row mt-5">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
-            <div class="card mb-4">
-                <div class="card-header">review</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#!">{{ review }}</a></li>
-                                <li><a href="#!">by</a></li>
-                                <li><a href="#!">product</a></li>
-                            </ul>
-                        </div>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Review</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6 order-lg-last mb-5">
+                <div class="row">
+                    <div class="col-7 offset-2">
+                        <p class="mb-1 mt-0 small text-muted">Product</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="mb-1 mt-0 small text-muted">User</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="mb-1 mt-0 small text-muted">Review</p>
                     </div>
                 </div>
+                {% for review in reviews %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url 'product_detail' review.product.id %}">
+                                {% if review.product.image %}
+                                    <img class="w-100" src="{{ review.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <p class="my-0"><strong>{{ review.product.name }}</strong></p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small text-muted">${{ review.user_profile}}</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small text-muted">${{ review.review }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            <div class="col-12 col-lg-6">
+                <p class="text-muted">Please fill out the form below to complete your order</p>
+                <form action="{% url 'review' %}" method="POST" id="review-form">
+                    {% csrf_token %}
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label small text-black px-2 w-auto">Review</legend>
+                        {{ review_form.review | as_crispy_field }}
+                    </fieldset>
+                    
+                    
+                    <div class="submit-button text-right mt-5 mb-2">                    
+						<a href="{% url 'product_detail' %}" class="btn btn-outline-black rounded-0">
+							<span class="icon">
+								<i class="fas fa-chevron-left"></i>
+							</span>
+							<span class="font-weight-bold">Return to Shop</span>
+						</a>
+						<button id="submit-button" class="btn btn-black rounded-0">
+							<span class="font-weight-bold">Save Review</span>
+							<span class="icon">
+								<i class="fas fa-lock"></i>
+							</span>
+						</button>
+					</div>
+                </form>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
