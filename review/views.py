@@ -8,13 +8,23 @@ from .models import Review
 
 
 def reviews(request):
-    """ A view that renders the bag contents page """
+    """ A view that renders the views contents page """
 
     return render(request, 'review/reviews.html')
       
 def add_review(request):
-    
-    form = ReviewForm()
+    """ Add a review to the product """
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request)
+        if form.is_valid():
+            form.save()
+            message.success(request, 'Secuessfully added your reviews!')
+            return redirect(reverse('add_review'))
+        else:
+            messages.error(request,'Failed to add your review. Make sure the form is valid.')
+    else:
+        form = ReviewForm()
+
     template = 'review/add_review.html'
     context = {
         'form': form,
