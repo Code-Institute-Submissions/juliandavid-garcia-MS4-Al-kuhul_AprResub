@@ -10,7 +10,14 @@ from .models import Review
 def reviews(request):
     """ A view that renders the views contents page """
 
-    return render(request, 'review/reviews.html')
+    reviews = Review.objects.all()
+
+    context = {
+        'reviews': reviews,
+    }
+
+
+    return render(request, 'review/reviews.html', context)
       
 def add_review(request):
     """ Add a review to the product """
