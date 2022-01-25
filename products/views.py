@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
+from profiles.models import UserProfile
 
 # Create your views here.
 
@@ -148,8 +149,7 @@ def reviews(request):
         'reviews': reviews,
     }
 
-
-    return render(request, 'review/reviews.html', context)
+    return render(request, 'products/reviews.html', context)
 
 
 
@@ -157,9 +157,12 @@ def review_detail(request, product_id):
     """ A view that shows individual reviews  """
 
     product = get_object_or_404(Product, pk=product_id)
+    
+    context = {
+        'reviews': reviews,
+    }
 
-
-    return render(request, 'review/review_detail.html', context)
+    return render(request, 'products/review_detail.html')
       
 def add_review(request):
     """ Add a review to the product """
