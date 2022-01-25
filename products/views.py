@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
+from profiles.models import UserProfile
 
 # Create your views here.
 
@@ -64,10 +66,26 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     
+    # reviews for the product
+    product_review = product.review.all()
+
+    if product_review.exists():
+        any_reviews = True
+    else:
+        any_reviews = False
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        user_reviewed = product_review.filter(user_profile=profile).exists()
+    else:
+        user_reviewed = False
+
 
     context = {
         'product': product,
-        
+        'product_review': product_review,
+        'any_reviews': any_reviews,
+        'user_reviewed': user_reviewed,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -149,7 +167,7 @@ def reviews(request):
     }
 
 
-    return render(request, 'review/reviews.html', context)
+    return render(request, 'products/reviews.html', context)
 
 
 
@@ -159,7 +177,7 @@ def review_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
 
-    return render(request, 'review/review_detail.html', context)
+    return render(request, 'product/review_detail.html', context)
       
 def add_review(request):
     """ Add a review to the product """

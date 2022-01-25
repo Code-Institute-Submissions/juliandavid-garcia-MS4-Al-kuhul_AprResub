@@ -33,8 +33,8 @@ class Product(models.Model):
 
 class Review(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='Review')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+                                     null=True, blank=True, related_name='review')
+    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE, related_name='review')
     review = models.TextField(max_length=400, null=False, blank=False)
 
     def __str__(self):
