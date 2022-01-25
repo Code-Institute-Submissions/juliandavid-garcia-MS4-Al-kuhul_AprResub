@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <div></div>
+                <h2 class="logo-font mb-4">Review</h2>
+                <hr>
+            </div>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">BY</th>
+                <th scope="col">Review</th>
+              </tr>
+            </thead>
+            {% for review in reviews %}
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td>{{ review.product }}</td>
+                <td>{{ review }}</td>
+                <td>{{ review.review }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+
+                <div class="text-right mt-5">
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'review_detail' product.id %}">Product details</a>
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'add_review' %}">Add a Review</a>
+                </div>
+{% endblock %}
