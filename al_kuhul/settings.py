@@ -53,10 +53,6 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'storages',
-<<<<<<< HEAD
-    #'review',
-=======
->>>>>>> 43f8d2346d10dc797a3222359eb43475790ba66f
     
 
 ]

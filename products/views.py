@@ -166,10 +166,6 @@ def reviews(request):
         'reviews': reviews,
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 43f8d2346d10dc797a3222359eb43475790ba66f
     return render(request, 'products/reviews.html', context)
 
 
@@ -179,7 +175,6 @@ def review_detail(request, review_id):
 
     Review = get_object_or_404(Review, pk=review_id)
 
-<<<<<<< HEAD
     if request.method == 'GET':
         profile = UserProfile.objects.get(user=request.user)
         form = ReviewForm(request.GET)
@@ -194,10 +189,6 @@ def review_detail(request, review_id):
                     }
     return render(request, 'review_detail.html', context)
     
-=======
-
-    return render(request, 'product/review_detail.html', context)
->>>>>>> 43f8d2346d10dc797a3222359eb43475790ba66f
       
 def add_review(request, product_id):
     """ Add a review to the product """

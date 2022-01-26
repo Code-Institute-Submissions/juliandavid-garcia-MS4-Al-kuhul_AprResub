@@ -26,9 +26,5 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
-<<<<<<< HEAD
     path('blog/', include('blog.urls')),
-   # path('review/', include('review.urls')), remove
-=======
->>>>>>> 43f8d2346d10dc797a3222359eb43475790ba66f
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
