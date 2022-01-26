@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -65,10 +66,26 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     
+    # reviews for the product
+    product_review = product.review.all()
+
+    if product_review.exists():
+        any_reviews = True
+    else:
+        any_reviews = False
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        user_reviewed = product_review.filter(user_profile=profile).exists()
+    else:
+        user_reviewed = False
+
 
     context = {
         'product': product,
-        
+        'product_review': product_review,
+        'any_reviews': any_reviews,
+        'user_reviewed': user_reviewed,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -149,6 +166,10 @@ def reviews(request):
         'reviews': reviews,
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43f8d2346d10dc797a3222359eb43475790ba66f
     return render(request, 'products/reviews.html', context)
 
 
@@ -158,6 +179,7 @@ def review_detail(request, review_id):
 
     Review = get_object_or_404(Review, pk=review_id)
 
+<<<<<<< HEAD
     if request.method == 'GET':
         profile = UserProfile.objects.get(user=request.user)
         form = ReviewForm(request.GET)
@@ -172,6 +194,10 @@ def review_detail(request, review_id):
                     }
     return render(request, 'review_detail.html', context)
     
+=======
+
+    return render(request, 'product/review_detail.html', context)
+>>>>>>> 43f8d2346d10dc797a3222359eb43475790ba66f
       
 def add_review(request, product_id):
     """ Add a review to the product """
