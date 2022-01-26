@@ -153,18 +153,27 @@ def reviews(request):
 
 
 
-def review_detail(request, product_id):
+def review_detail(request, review_id):
     """ A view that shows individual reviews  """
 
-    product = get_object_or_404(Product, pk=product_id)
-    
-    context = {
-        'reviews': reviews,
-    }
+    Review = get_object_or_404(Review, pk=review_id)
 
-    return render(request, 'products/review_detail.html')
+    if request.method == 'GET':
+        profile = UserProfile.objects.get(user=request.user)
+        form = ReviewForm(request.GET)
+        form_data = {
+            'review': request.GET['review'],
+        }
+        productreview_form = ReviewForm(form_data)
+        # check if form is valid
+        if productreview_form.is_valid():
+            context = {
+                'reviews': reviews,
+                    }
+    return render(request, 'review_detail.html', context)
+    
       
-def add_review(request):
+def add_review(request, product_id):
     """ Add a review to the product """
 
     product = get_object_or_404(Product, pk=product_id)
