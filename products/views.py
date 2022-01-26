@@ -155,7 +155,19 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
-        
+
+def product_reviews(request, review_id):
+
+    reviews = Review.objects.filter(pk=review_id)
+
+    context = {
+        'reviews': reviews,
+    }
+    
+    print("REVIEWS", reviews)
+    
+    return render(request, 'products/reviews.html', context)
+    
 
 def reviews(request):
     """ A view that renders the views contents page """
@@ -187,6 +199,7 @@ def review_detail(request, review_id):
             context = {
                 'reviews': reviews,
                     }
+    
     return render(request, 'review_detail.html', context)
     
       
