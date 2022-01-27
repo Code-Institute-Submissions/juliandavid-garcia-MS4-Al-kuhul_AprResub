@@ -158,23 +158,41 @@ def delete_product(request, product_id):
 
 def product_reviews(request, review_id):
 
-    reviews = Review.objects.filter(pk=review_id)
+    reviews = Review.objects.filter(product=review_id)
+    product = get_object_or_404(Product, pk=review_id)
 
     context = {
-        'form': form,
+        'reviews': reviews,
+        'product': product,
     }
     
     return render(request, 'products/reviews.html', context)
     
 
      
-def add_review(request):
+def add_review(request, review_id):
+    """ Add a review to the product """
+    reviews = Review.objects.filter(product=review_id)
+    product = get_object_or_404(Product, pk=review_id)
+    
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review_form = form.save(commit=False)
+            review_form.product = product
+            review_form = review_form.save()
+            messages.success(request, 'Your review has been successfully added!')
+            return redirect(reverse('product-reviews', args=[product.id]))
+        else:
+             message.error(request, 'Fail to add the review. please ensure the ##form is valid.')
+    else:
+        form = ReviewForm()
 
-    form = ReviewForm()
     template = 'products/add_review.html'
-    context = {
-        'form': form,
-    }
+    context = { 
+       'form': form,
+       'product': product,
+         }
 
     return render(request, template, context)
 
