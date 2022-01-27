@@ -161,24 +161,44 @@ def product_reviews(request, review_id):
     reviews = Review.objects.filter(pk=review_id)
 
     context = {
-        'reviews': reviews,
+        'form': form,
     }
-    
-    print("REVIEWS", reviews)
     
     return render(request, 'products/reviews.html', context)
     
 
-def reviews(request):
-    """ A view that renders the views contents page """
+     
+def add_review(request):
 
-    reviews = Review.objects.all()
-
+    form = ReviewForm()
+    template = 'products/add_review.html'
     context = {
-        'reviews': reviews,
+        'form': form,
     }
 
-    return render(request, 'products/reviews.html', context)
+    return render(request, template, context)
+
+
+
+def post_detail(request, slug):
+    post = Post.objects.get(slug=slug)
+
+    if request.method == 'POST':
+    	form = CommentForm(request.POST)
+
+    	if form.is_valid():
+    		comment = form.save(commit=False)
+    		comment.post = post
+    		comment.save()
+
+    		return redirect('post_detail', slug=post.slug)
+    else:
+    	form = CommentForm()
+
+    return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+
+
+
 
 
 
@@ -202,55 +222,3 @@ def review_detail(request, review_id):
     
     return render(request, 'review_detail.html', context)
     
-      
-def add_review(request, product_id):
-    """ Add a review to the product """
-
-    product = get_object_or_404(Product, pk=product_id)
-
-    if request.method == 'POST':
-        profile = UserProfile.objects.get(user=request.user)
-        form = ReviewForm(request.POST, request)
-
-        form_data = {
-            'review': request.POST['review'],
-        }
-
-        form = ReviewForm(form_data)
-        # check if form is valid
-        if  form.is_valid():
-            productreview = form.save(commit=False)
-            productreview.product = product
-            productreview.user_profile = profile
-            productreview.save()
-            messages.success(request, 'Successfully added product review!')
-            return redirect(reverse('product_detail', args=[product.id]))
-        # form is not valid
-        else:
-            messages.error(request, 'Failed to add product review. ' +
-                           'Please ensure the form is valid.')
-    else:
-        # check if the user has already made a review
-        # for this product previously
-        # if so redirect back to product page with an error message
-        profile = UserProfile.objects.get(user=request.user)
-        product_reviews = product.reviews.all()
-        if product_reviews.filter(user_profile=profile).exists():
-            messages.error(request, "You have already reviewed " +
-                           "this product. You can update your " +
-                           "review from below or your profile!")
-            return redirect(reverse('review_detail', args=[product.id]))
-        else:
-            form = ReviewForm()
-
-    template = 'products/add_review.html'
-    context = {
-        'form': form,
-        'product': product,
-    }
-
-    return render(request, template, context)
-
-
-
-
