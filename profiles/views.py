@@ -26,7 +26,7 @@ def profile(request):
 
     # reviews made by user
     user_reviews = Review.objects.all()
-
+    
     template = 'profiles/profile.html'
     context = {
         'form': form,
