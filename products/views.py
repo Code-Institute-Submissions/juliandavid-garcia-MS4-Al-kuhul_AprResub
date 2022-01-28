@@ -66,7 +66,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     
-    # reviews for the product
+    #reviews for the product
     product_review = product.review.all()
 
     if product_review.exists():
@@ -84,8 +84,8 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'product_review': product_review,
-        'any_reviews': any_reviews,
-        'user_reviewed': user_reviewed,
+        #'any_reviews': any_reviews,
+        #'user_reviewed': user_reviewed,
     }
 
     return render(request, 'products/product_detail.html', context)
