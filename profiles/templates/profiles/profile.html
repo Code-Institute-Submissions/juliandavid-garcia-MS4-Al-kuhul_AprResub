@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
+                <h2 class="logo-font mb-4">{{ profile }}'s Profile</h2>
                 <hr>
             </div>
         </div>
@@ -71,6 +71,41 @@
                 </div>
             </div>
         </div>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <hr class="mb-4">
+                    <!-- Show users reviews they made -->
+                    <h2 class="logo-font mb-4">My Reviews</h2>
+                    <hr>
+                    {% if user_reviews %}
+                    
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">BY</th>
+                                <th scope="col">Review</th>
+                            </tr>
+                        </thead>
+                        {% for userreview in user_reviews %}
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>{{ userreview.product }}</td>
+                                <td>{{ userreview. }}</td>
+                                <td>{{ userreview.review }}</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% else %}
+                <!-- allow signed in users to add a review -->
+                You have not made any reviews yet, go to a product to add a review and help other users!  
+                {% endif %}
 {% endblock %}
 
 {% block postloadjs %}

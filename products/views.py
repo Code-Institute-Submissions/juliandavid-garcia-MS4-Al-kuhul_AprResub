@@ -160,10 +160,12 @@ def product_reviews(request, review_id):
 
     reviews = Review.objects.filter(product=review_id)
     product = get_object_or_404(Product, pk=review_id)
+    profile = UserProfile.objects.get(user=request.user)
 
     context = {
         'reviews': reviews,
         'product': product,
+        'profile': profile,
     }
     
     return render(request, 'products/reviews.html', context)
@@ -185,6 +187,7 @@ def add_review(request, review_id):
             return redirect(reverse('product-reviews', args=[product.id]))
         else:
              message.error(request, 'Fail to add the review. please ensure the ##form is valid.')
+    
     else:
         form = ReviewForm()
 
@@ -192,9 +195,44 @@ def add_review(request, review_id):
     context = { 
        'form': form,
        'product': product,
+       
          }
 
     return render(request, template, context)
+
+
+
+def edit_review(request, review_id):
+    """ Edit a review of a product """
+
+    review = get_object_or_404(Review, pk=review_id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        # check if form is valid
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product review!')
+            return redirect(reverse('product-reviews', args=[product.id]))
+        # form is not valid
+        else:
+            messages.error(request, 'Failed to update product review.' +
+                           'Please ensure the form is valid.')
+    # get form
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, 'You are editing your review for' +
+                      f'{review.product}')
+
+    template = 'products/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
+    }
+
+    return render(request, template, context)
+
+
 
 
 

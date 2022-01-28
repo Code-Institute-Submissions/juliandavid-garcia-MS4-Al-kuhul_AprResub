@@ -39,7 +39,7 @@
               <tr>
                 <th scope="row"></th>
                 <td>{{ review.product }}</td>
-                <td>{{ review }}</td>
+                <td>{{ review.user_profile }}</td>
                 <td>{{ review.review }}</td>
               </tr>
             </tbody>
@@ -47,7 +47,7 @@
           </table>
 
                 <div class="text-right mt-5">
-                    <a class="btn btn-outline-black rounded-0" href="">Product details</a>
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'product_detail' product.id %}">Product details</a>
                     <a class="btn btn-outline-black rounded-0" href="{% url 'add_review' review_id=product.id %}">Add a Review</a>
                 </div>
 {% endblock %} 
