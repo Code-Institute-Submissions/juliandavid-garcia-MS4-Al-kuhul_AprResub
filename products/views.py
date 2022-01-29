@@ -145,18 +145,18 @@ def product_reviews(request, review_id):
     #profile = UserProfile.objects.get(user=request.user)
     
     #reviews for the product
-    product_review = product.review.all()
+    #product_review = product.review.all()
 
     #if product_review.exists():
     #    any_reviews = True
     #else:
     #    any_reviews = False
 
-    if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
+    #if request.user.is_authenticated:
+        #profile = UserProfile.objects.get(user=request.user)
         #user_reviewed = product_review.filter(user_profile=profile).exists()
-    else:
-        user_reviewed = False
+    #else:
+        #user_reviewed = False
 
     context = {
         'reviews': reviews,
