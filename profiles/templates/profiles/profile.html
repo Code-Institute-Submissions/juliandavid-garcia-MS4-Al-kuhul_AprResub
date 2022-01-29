@@ -99,7 +99,7 @@
                                 <td>{{ userreview.user_profile}}</td>
                                 <td>{{ userreview.review }} <div class="text-right mt-5">
                                     <a class="btn btn-outline-black rounded-0" href="{% url 'edit_review' userreview.id %}">Edit review</a>
-                                    <a class="btn btn-outline-black rounded-0" href="">Erase Review</a>
+                                    <a class="btn btn-outline-black rounded-0" href="{% url 'delete_review' userreview.id %}">Erase Review</a>
                                 </div></td>
                             </tr>
                         </tbody>

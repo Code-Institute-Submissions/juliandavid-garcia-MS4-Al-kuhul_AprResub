@@ -147,10 +147,10 @@ def product_reviews(request, review_id):
     #reviews for the product
     product_review = product.review.all()
 
-    if product_review.exists():
-        any_reviews = True
-    else:
-        any_reviews = False
+    #if product_review.exists():
+    #    any_reviews = True
+    #else:
+    #    any_reviews = False
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
@@ -162,8 +162,8 @@ def product_reviews(request, review_id):
         'reviews': reviews,
         'product': product,
         #'profile': profile,
-        'any_reviews': any_reviews,
-        'user_reviewed': user_reviewed,
+        #'any_reviews': any_reviews,
+        #'user_reviewed': user_reviewed,
     }
     
     return render(request, 'products/reviews.html', context)
@@ -234,6 +234,16 @@ def edit_review(request, review_id):
     return render(request, template, context)
 
 
+@login_required
+def delete_review(request, review_id):
+    """ Delete a review of a product """
+
+    # get the review and delete it
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+    review.delete()
+    messages.success(request, 'Product review deleted!')
+    return redirect(reverse('profile'))
 
 
 
