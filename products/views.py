@@ -154,7 +154,7 @@ def product_reviews(request, review_id):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        user_reviewed = product_review.filter(user_profile=profile).exists()
+        #user_reviewed = product_review.filter(user_profile=profile).exists()
     else:
         user_reviewed = False
 
