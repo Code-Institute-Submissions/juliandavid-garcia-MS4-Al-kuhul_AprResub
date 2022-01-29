@@ -142,28 +142,10 @@ def product_reviews(request, review_id):
 
     reviews = Review.objects.filter(product=review_id)
     product = get_object_or_404(Product, pk=review_id)
-    #profile = UserProfile.objects.get(user=request.user)
     
-    #reviews for the product
-    #product_review = product.review.all()
-
-    #if product_review.exists():
-    #    any_reviews = True
-    #else:
-    #    any_reviews = False
-
-    #if request.user.is_authenticated:
-        #profile = UserProfile.objects.get(user=request.user)
-        #user_reviewed = product_review.filter(user_profile=profile).exists()
-    #else:
-        #user_reviewed = False
-
     context = {
         'reviews': reviews,
         'product': product,
-        #'profile': profile,
-        #'any_reviews': any_reviews,
-        #'user_reviewed': user_reviewed,
     }
     
     return render(request, 'products/reviews.html', context)
