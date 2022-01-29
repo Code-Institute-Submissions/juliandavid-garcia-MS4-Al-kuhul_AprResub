@@ -66,26 +66,8 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     
-    #reviews for the product
-    product_review = product.review.all()
-
-    if product_review.exists():
-        any_reviews = True
-    else:
-        any_reviews = False
-
-    if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
-        user_reviewed = product_review.filter(user_profile=profile).exists()
-    else:
-        user_reviewed = False
-
-
     context = {
         'product': product,
-        'product_review': product_review,
-        #'any_reviews': any_reviews,
-        #'user_reviewed': user_reviewed,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -160,28 +142,47 @@ def product_reviews(request, review_id):
 
     reviews = Review.objects.filter(product=review_id)
     product = get_object_or_404(Product, pk=review_id)
-    profile = UserProfile.objects.get(user=request.user)
+    #profile = UserProfile.objects.get(user=request.user)
+    
+    #reviews for the product
+    product_review = product.review.all()
+
+    if product_review.exists():
+        any_reviews = True
+    else:
+        any_reviews = False
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        user_reviewed = product_review.filter(user_profile=profile).exists()
+    else:
+        user_reviewed = False
 
     context = {
         'reviews': reviews,
         'product': product,
-        'profile': profile,
+        #'profile': profile,
+        'any_reviews': any_reviews,
+        'user_reviewed': user_reviewed,
     }
     
     return render(request, 'products/reviews.html', context)
     
 
-     
+@login_required     
 def add_review(request, review_id):
     """ Add a review to the product """
     reviews = Review.objects.filter(product=review_id)
     product = get_object_or_404(Product, pk=review_id)
+    profile = UserProfile.objects.get(user=request.user)
+
     
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
             review_form = form.save(commit=False)
             review_form.product = product
+            review_form.user_profile = profile
             review_form = review_form.save()
             messages.success(request, 'Your review has been successfully added!')
             return redirect(reverse('product-reviews', args=[product.id]))
@@ -195,7 +196,7 @@ def add_review(request, review_id):
     context = { 
        'form': form,
        'product': product,
-       
+       'profile': profile,
          }
 
     return render(request, template, context)

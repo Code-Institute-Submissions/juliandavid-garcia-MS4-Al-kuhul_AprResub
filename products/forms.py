@@ -25,6 +25,7 @@ class ReviewForm(forms.ModelForm):
 
     class Meta: 
         model = Review
+        exclude = ('user',)
         fields = ('review',)
 
     def __init__(self, *args, **kwargs):
