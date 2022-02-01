@@ -12,7 +12,10 @@ def blog(request):
 
     posts = Post.objects.all()
 
-    return render(request, 'blog/blog.html')
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'blog/blog.html', context)
 
 
 # change the post detail view
@@ -32,9 +35,13 @@ def post_detail(request, post_id):
     		return redirect('post_detail', post_id)
     else:
     	form = CommentForm()
+    context = {
+        'post': post,
+        'form': form,
+    }
         
 
-    return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+    return render(request, 'blog/post_detail.html', context)
 
 
 def add_post(request):
