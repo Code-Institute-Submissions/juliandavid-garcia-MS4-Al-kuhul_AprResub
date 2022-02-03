@@ -1,14 +1,22 @@
 <ul>
-    <li class="list-inline-item">
-        <a class="text-black nav-link d-block d-lg-none" href="{% url 'blog' %}">
+    <li class="list-inline-item dropdown">
+        <a class="nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fab fa-blogger fa-lg"></i></div>
-                <p class="my-0">
-                    Blog
-                </p>
+                <p class="my-0">Blog</p>
             </div>
         </a>
-      </li>
+        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'add_post' %}" class="dropdown-item">Add a Post</a>
+                {% endif %}
+                <a href="{% url 'blog' %}" class="dropdown-item">Read</a>
+            {% else %}
+            <a href="{% url 'blog' %}" class="dropdown-item">Read</a>
+            {% endif %}
+        </div>
+    </li>
     <li class="list-inline-item">
       <a class="nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
