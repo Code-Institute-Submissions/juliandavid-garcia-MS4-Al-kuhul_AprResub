@@ -16,7 +16,7 @@
           <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
           <p class="card-text ">{{ post.content | safe }}</p>
 		  {% if request.user.is_superuser %}
-		  <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">edit this Post</a>
+		  <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit this Post</a>
 		  <a href="{% url 'delete_post' post.id %}" class="btn btn-primary">Delete this Post</a>
 		  {% endif %}
         </div>
