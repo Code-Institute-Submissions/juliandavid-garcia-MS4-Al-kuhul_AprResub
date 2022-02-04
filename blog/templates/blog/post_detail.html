@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="overlay"></div>
 <div class="container">
     <div class="row">
       <div class="col-md-8 card mb-4  mt-3 left  top">
@@ -19,33 +20,38 @@
 		  <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit this Post</a>
 		  <a href="{% url 'delete_post' post.id %}" class="btn btn-primary">Delete this Post</a>
 		  {% endif %}
-        </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-
-<h2 class="subtitle">Comments</h2>
-
-{% for comment in post.comments.all %}
-	<article class="media">
-		<div class="media-content">
-			<div class="content">
-				<p>
-					<strong>{{ comment.name }}</strong> <small>{{ comment.date_added|timesince }} ago</small>
-					<br>
-					{{ comment.body }}
-				</p>
+			<div class="row">
+				<div class="col-md-8 card mb-4  mt-3 left  top">
+					<div class="card-body">
+			
+						<h2 class="subtitle">Comments</h2>
+		
+		{% for comment in post.comments.all %}
+			<article class="media">
+				<div class="media-content">
+					<div class="content">
+						<p>
+							<strong>{{ comment.name }}</strong> <small>{{ comment.date_added|timesince }} ago</small>
+							<br>
+							{{ comment.body }}
+						</p>
+					</div>
+				</div>
+			</article>
+		{% empty %}
+			<div class="notification">
+				No comments yet...
+			</div>
+		{% endfor %}
+					</div>
+				</div>
 			</div>
 		</div>
-	</article>
-{% empty %}
-	<div class="notification">
-		No comments yet...
-	</div>
-{% endfor %}
-
-<hr>
+        </div>
+        </div>
+<div class="row">
+	<div class="col-md-8 card mb-4  mt-3 left  top">
+        <div class="card-body">
     <h2 class="subtitle">Add comment</h2>
 
 	<form method="post" action=".">
@@ -53,11 +59,20 @@
 
 		{{ form.as_p }}
 
-		<div class="field">
+		<!--<div class="field">
 			<div class="control">
 				<button class="button is-success">Submit</button>
+			</div>-->
+			<div class="text-right">
+				<button class="btn btn-outline-black rounded-0" type="submit">Add Comment</button>
 			</div>
-		</div>
 	</form>
   </div>
+  </div>
+</div>
+</div>
+
+    <hr>
+<hr>
+
 {% endblock %}
