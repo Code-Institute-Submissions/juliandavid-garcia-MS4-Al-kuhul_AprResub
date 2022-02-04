@@ -25,9 +25,6 @@ def profile(request):
     orders = profile.orders.all()
 
     # reviews made by user
-    #user_reviews = Review.objects.all()
-    #user_reviews = Review.objects.filter(user_profile, user=request.user)
-    #product_review.filter(user_profile=profile)
     user_reviews = Review.objects.filter(user_profile=profile)
     
     
