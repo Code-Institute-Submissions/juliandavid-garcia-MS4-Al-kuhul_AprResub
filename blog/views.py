@@ -10,6 +10,7 @@ from profiles.models import UserProfile
 
 def blog(request):
 
+
     posts = Post.objects.all()
 
     context = {
@@ -86,6 +87,13 @@ def delete_post(request, post_id):
     messages.success(request, 'Post deleted!')
     return redirect(reverse('blog'))
 
+
+def delete_comment(request, comment_id):
+    """ Delete a product from the store """
+    comment =  get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    messages.success(request, 'Comment deleted!')
+    return redirect(reverse('post_detail'))
 
 
 
