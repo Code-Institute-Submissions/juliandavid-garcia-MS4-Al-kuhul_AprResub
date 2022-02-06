@@ -7,6 +7,8 @@ class CommentForm(forms.ModelForm):
 		model = Comment
 		exclude = ('user',)
 		fields = ['name', 'email', 'body',]
+	
+	
 
 
 class PostForm(forms.ModelForm):
