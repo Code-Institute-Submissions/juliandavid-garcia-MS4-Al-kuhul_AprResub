@@ -26,8 +26,7 @@
 			
 						<h2 class="subtitle">Comments</h2>
 		
-		{% for comment in post.comments.all %}
-		<a href="{% url 'delete_comment' comment.id %}" class="btn btn-primary">Delete this Post</a>
+		{% for comment in post.comments.all|slice:":4" %}
 			<article class="media">
 				<div class="media-content">
 					<div class="content">

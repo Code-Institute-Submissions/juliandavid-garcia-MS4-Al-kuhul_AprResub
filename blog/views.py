@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from profiles.models import UserProfile
 
 # Create your views here.
 from django.views import generic
@@ -47,9 +48,11 @@ def post_detail(request, post_id):
 
 def add_post(request):
     """ Add A post to the blog """
+    profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
+            form.author = profile
             form.save()
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('add_post'))
@@ -88,12 +91,12 @@ def delete_post(request, post_id):
     return redirect(reverse('blog'))
 
 
-def delete_comment(request, comment_id):
-    """ Delete a product from the store """
-    comment =  get_object_or_404(Comment, pk=comment_id)
-    comment.delete()
-    messages.success(request, 'Comment deleted!')
-    return redirect(reverse('post_detail'))
+#def delete_comment(request, comment_id):
+#    """ Delete a product from the store """
+#    comment =  get_object_or_404(Comment, pk=comment_id)
+#    comment.delete()
+#    messages.success(request, 'Comment deleted!')
+#    return redirect(reverse('post_detail', post_id))
 
 
 
