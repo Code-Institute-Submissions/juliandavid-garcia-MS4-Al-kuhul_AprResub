@@ -10,6 +10,14 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container">
+	<div class="row">
+		<div class="col-12 col-md-6">
+			<hr>
+			<h2 class="logo-font mb-4">Blog</h2>
+			<h5 class="text-muted">Post: {{ post.title }}</h5>
+			<hr>
+		</div>
+	</div>
     <div class="row">
       <div class="col-md-8 card mb-4  mt-3 left  top">
         <div class="card-body">
@@ -50,21 +58,15 @@
         </div>
         </div>
 <div class="row">
-	<div class="col-md-8 card mb-4  mt-3 left  top">
+	<div class="col-12 col-md-6 card mb-4  mt-3 left  top">
         <div class="card-body">
     <h2 class="subtitle">Add comment</h2>
 
-	<form method="post" action=".">
+	<form method="post" action="." class="form mb-2">
 		{% csrf_token %}
-
 		{{ form.as_p }}
-
-		<!--<div class="field">
-			<div class="control">
-				<button class="button is-success">Submit</button>
-			</div>-->
-			<div class="text-right">
-				<button class="btn btn-outline-black rounded-0" type="submit">Add Comment</button>
+			<div class="text-center">
+				<button class="btn btn btn-black rounded-0" type="submit">Add Comment</button>
 			</div>
 	</form>
   </div>

@@ -16,7 +16,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     updated_on = models.DateTimeField(auto_now= True)
-    content = models.TextField(max_length=600, unique=True)
+    content = models.TextField(max_length=900, unique=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
