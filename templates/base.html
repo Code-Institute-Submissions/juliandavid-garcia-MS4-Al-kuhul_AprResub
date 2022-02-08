@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+    <head>
 
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -38,112 +38,110 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Al-kuhul {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-</head>
-<body>
-  <header class="container-fluid fixed-top background border-black-low">
-      <div id="delivery-banner" class="row text-center">
-          <div class="col bg-black text-white">
-              <h6 class="my-1">
-                  Order before 23:00 and get your product next day</h6>                
-          </div>            
-      </div>
-      <div class="navbar-expand-lg  d-none  d-lg-flex">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="{% url 'home' %}"><h2 class="logo-font text-black my-0"><strong>Al-</strong>kuhul</h2>
-        </a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="list-inline-item dropdown">
-                <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center">
-                        <p class="my-0">My Account</p>
+        <title>Al-kuhul {% block extra_title %}{% endblock %}</title>
+    </head>
+    <body>
+        <header class="container-fluid fixed-top background border-black-low">
+            <div id="delivery-banner" class="row text-center">
+                <div class="col bg-black text-white">
+                    <h6 class="my-1">
+                  Order before 23:00 and get your product next day<h6>                
+                </div>            
+            </div>
+            <div class="navbar-expand-lg  d-none  d-lg-flex">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="{% url 'home' %}"><h2 class="logo-font text-black my-0"><strong>Al-</strong>kuhul</h2>
+                    </a>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="list-inline-item dropdown">
+                            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <p class="my-0">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <li class="list-inline-item dropdown">
+                            <a class="nav-link" href="#" id="blog-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <p class="my-0">Blog</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="blog-options">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="{% url 'add_post' %}" class="dropdown-item">Add a Post</a>
+                                {% endif %}
+                                <a href="{% url 'blog' %}" class="dropdown-item">Read</a>
+                            {% else %}
+                                <a href="{% url 'blog' %}" class="dropdown-item">Read</a>
+                            {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'products' %}">
+                        <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search our products" aria-label="Search">
+                        <button class="btn btn-outline-black my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <div class="nav-item">
+                        <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_bag' %}">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                    {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                        {% endif %}
-                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                    {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                    {% endif %}
                 </div>
-            </li>
-            <li class="list-inline-item dropdown">
-                <a class="nav-link" href="#" id="blog-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center">
-                        <p class="my-0">Blog</p>
-                    </div>
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="blog-options">
-                    {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                            <a href="{% url 'add_post' %}" class="dropdown-item">Add a Post</a>
-                        {% endif %}
-                    <a href="{% url 'blog' %}" class="dropdown-item">Read</a>
-                    {% else %}
-                        <a href="{% url 'blog' %}" class="dropdown-item">Read</a>
-                    {% endif %}
-                </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'products' %}">
-            <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search our products" aria-label="Search">
-            <button class="btn btn-outline-black my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <div class="nav-item">
-            <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_bag' %}">
-                <div class="text-center">
-                    <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                    <p class="my-0">
-                        {% if grand_total %}
-                            ${{ grand_total|floatformat:2 }}
-                        {% else %}
-                            $0.00
-                        {% endif %}
-                    </p>
-                </div>
-            </a>
-        </div>
-        </div>
-    </div>
-      <div class="row">
-          <nav class="navbar navbar-expand-lg navbar-light w-100">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              {% include 'includes/mobile-top-header.html' %}
-              {% include 'includes/main-nav.html' %}
-          </nav>
-      </div>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light w-100">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+                </nav>
+            </div>
       
-  </header>
+        </header>
 
-    {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-    {% endif %}
+        {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'includes/toasts/toast_error.html' %}
+                        {% elif level == 30 %}
+                            {% include 'includes/toasts/toast_warning.html' %}
+                        {% elif level == 25 %}
+                            {% include 'includes/toasts/toast_success.html' %}
+                        {% else %}
+                            {% include 'includes/toasts/toast_info.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
     {% block page_header %}
     {% endblock %}
@@ -154,48 +152,48 @@
     <footer class="page-footer font-small bg-white mt-5">
 
         <div class="footer-bg">
-          <div class="container">
+            <div class="container">
       
             <!-- Grid row-->
-            <div class="row py-4 d-flex align-items-center text-white">
+                <div class="row py-4 d-flex align-items-center text-white">
       
               <!-- Grid column -->
-              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                <h6 class="mb-0">Get connected with us on social networks!</h6>
-              </div>
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                    </div>
               <!-- Grid column -->
       
               <!-- Grid column -->
-              <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
       
                 <!-- Facebook -->
-                <a  href="https://www.facebook.com/" class="fb-ic text-white" target="_blank">
-                  <i class="fab fa-facebook-f white-text mr-4"> </i>
-                </a>
+                        <a  href="https://www.facebook.com/" class="fb-ic text-white" target="_blank">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
                 <!-- Twitter -->
-                <a href="https://twitter.com/?lang=en" class="tw-ic text-white" target="_blank">
-                  <i class="fab fa-twitter white-text mr-4"> </i>
-                </a>
+                        <a href="https://twitter.com/?lang=en" class="tw-ic text-white" target="_blank">
+                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        </a>
                 <!-- Google +-->
-                <a href="https://www.google.com/" class="gplus-ic text-white" target="_blank">
-                  <i class="fab fa-google-plus-g white-text mr-4"> </i>
-                </a>
+                        <a href="https://www.google.com/" class="gplus-ic text-white" target="_blank">
+                            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                        </a>
                 <!--Linkedin -->
-                <a href="https://www.linkedin.com/" class="li-ic text-white" target="_blank">
-                  <i class="fab fa-linkedin-in white-text mr-4"> </i>
-                </a>
+                        <a href="https://www.linkedin.com/" class="li-ic text-white" target="_blank">
+                            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                        </a>
                 <!--Instagram-->
-                <a href="https://www.instagram.com/" class="ins-ic text-white" target="_blank">
-                  <i class="fab fa-instagram white-text"> </i>
-                </a>
+                        <a href="https://www.instagram.com/" class="ins-ic text-white" target="_blank">
+                            <i class="fab fa-instagram white-text"> </i>
+                        </a>
       
-              </div>
+                    </div>
               <!-- Grid column -->
       
-            </div>
+                </div>
             <!-- Grid row-->
       
-          </div>
+            </div>
         </div>
       
         <!-- Footer Links -->
@@ -287,7 +285,7 @@
         </div>
         <!-- Copyright -->
       
-      </footer>
+    </footer>
       <!-- Footer -->
 
     {% block postloadjs %}
