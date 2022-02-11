@@ -51,7 +51,6 @@
 - To have a profile to keep a history of my purchases
 - To keep my information saved for future purchases
 - To be able to log out my session
-- To receive newsletters 
 
 
 ### As a Administrator user I want: 

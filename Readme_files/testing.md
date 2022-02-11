@@ -65,7 +65,7 @@ As the site is successfully linked to stripe users can pay their purchases using
 Users  do not need to be members to buy on this site. they will need to add the information required to get their products but their information will nor be storaged. Therefore, everytime this kind of user want to make a purchase they will need to introduce their information. 
 **Result:** Test passed
 
-- a confirmation mail after each purchase
+- A confirmation mail after each purchase
 **Testing**
 Everytime users place an order they will get a confirmation email with all the details of the purchase.  
 **Result:** Test passed
@@ -90,6 +90,53 @@ As the users navigate trhough the site they will be informed about  the differen
 **Testing**
 When navigating the site users can make use of the search bar in order to speed up the proccess of finding a product. This search bar is available in all kind of devices. thus it can be found in desktops, tablets and mobiles.  
 **Result:** Test passed
+
+- To add and removed items from the shopping bag
+**Testing**
+While shopping users can add and remove items from the shopping bag at any momment. They can acccess the shopping bag not matter in which section of the site they are.
+**Result:** Test passed
+
+- To be able to make purchases in different devices (mobile, tablet, desktop)
+**Testing**
+This site is responsive. it means that it works perfectly fine in all devices(desktops, tablets, and mobiles)
+**Result:** Test passed
+
+- To have the option to create an account in the site
+**Testing**
+All first time visitors have the option to register in the website and create an account in order to save their personal information and speed up future purchases. Besides, registered users have access to add, edit and remove reviews from our products. 
+**Result:** Test passed
+
+### As a member user I want: 
+
+- To have a profile to keep a history of my purchases
+**Testing**
+ As soon as an user is registered a profile page is created. Here users can find their personal information which can easily be updated; A historial of all the purchases done by the user and a list of the reviews made by this user.  
+**Result:** Test passed
+
+- To keep my information saved for future purchases
+**Testing**
+As users create an account they have the chance to save their info by checking the check box  "Save this delivery information to my profile". This info can be found in the profile pagte of the user an can be easily updated based on the users needs. 
+**Result:** Test passed
+
+- To be able to log out my session
+**Testing**
+In the header of the site there is a link called "My account" there users find the option to log out if they are already logged in. Otherwise users will find the options to log in or register if they do not have an account yet. 
+**Result:** Test passed
+
+
+### As a Administrator user I want:
+- To have access to the list of orders placed in the website
+**Testing**
+ Users can access the list of all the orders through django admin panel. There administrators can access all the information regarding the name of the users and the different orders they have placed 
+ 
+**Result:** Test passed
+
+- To have a section where i can  add, edit, delete and create new items
+**Testing**
+ - Administrators can access add, edit and delete products from the site in two different ways: The first option is thought the Django Admin panel which can be accessed by adding /admin at the end of the websites name. The second option is by loging in the website and clicking on the "my account" link and selecting the option "product management". Here Administratiors can also add, edit or delete products from the site.  
+ 
+**Result:** Test passed
+
 
 
 
