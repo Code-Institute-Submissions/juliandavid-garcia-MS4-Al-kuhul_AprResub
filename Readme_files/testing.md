@@ -2,14 +2,16 @@
 - <a href="#Manual-testing">1. Manual testing</a>
   - <a href="#Project">1.1. Project goals</a>
   - <a href="#User-story">1.2 User stories</a>
+  - <a href="#Admin-story">1.2 Admin stories</a>
 - <a href="#Automated-testing">2. Automated testing</a>
 - <a href="#Code-validators">3. Code validators</a>
-- <a href="#Testing">4. Responsiveness</a>
+- <a href="#Responsiveness">4. Responsiveness</a>
 - <a href="#Browser-compability">5. Browser compability</a>
 - <a href="#Credits">6. Bugs</a>
 
 
 
+<span id="#Manual-testing"></span>
 ## 1. Manual testing:
 
 **The following user stories were tested manually.**
@@ -42,6 +44,7 @@ The administrators of the site can add, read, edit, and delete not only products
 - Most of the products offered in the site are foreign products that are not easily found in common liqueur stores.
 **Result:** Test passed
 
+<span id="#User-story"></span>
 ### 1. 2 Testing  User Stories
 ### As a first time visitor I want:
 
@@ -123,7 +126,7 @@ As users create an account they have the chance to save their info by checking t
 In the header of the site there is a link called "My account" there users find the option to log out if they are already logged in. Otherwise users will find the options to log in or register if they do not have an account yet. 
 **Result:** Test passed
 
-
+<span id="#Admin-story"></span>
 ### As a Administrator user I want:
 - To have access to the list of orders placed in the website
 **Testing**
@@ -139,10 +142,21 @@ In the header of the site there is a link called "My account" there users find t
 
 
 
+## 1. Responsiveness:
+<span id="#Responsiveness"></span>
+![Responsiveness](/Readme_images/27-responsiveness-1.JPG)
+![Responsiveness](/Readme_images/28-responsiveness-2.JPG)
+
+
+<span id="#Browser-compability"></span>
+
+<span id="#Credits"></span>
+<span id="#Browser-compability"></span>
+<span id="#Code-validators"></span>
+<span id="#Automated-testing"></span>
 
 
 
 
 
-### 1.1 Project goals:
-## 1.2 User Story:
+
