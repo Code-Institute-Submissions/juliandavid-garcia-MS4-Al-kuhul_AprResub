@@ -235,7 +235,7 @@ No errors found in the css files
 ![JavaScript](/Readme_images/)
 
 ## pep8 Python Validator
-- When validating the python code there is a warning i could not get rid of. It says "no newline at end of file".
+
 ![Python](/Readme_images/)
 
 
