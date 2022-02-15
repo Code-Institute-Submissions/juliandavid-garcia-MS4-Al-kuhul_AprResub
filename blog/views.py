@@ -9,9 +9,8 @@ from .models import Post
 from .forms import CommentForm, PostForm
 from profiles.models import UserProfile
 
+
 def blog(request):
-
-
     posts = Post.objects.all()
 
     context = {
@@ -25,23 +24,22 @@ def blog(request):
 def post_detail(request, post_id):
 
     post = Post.objects.get(pk=post_id)
-	
+
     if request.method == 'POST':
-    	form = CommentForm(request.POST)
+        form = CommentForm(request.POST)
 
-    	if form.is_valid():
-    		comment = form.save(commit=False)
-    		comment.post = post
-    		comment.save()
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
 
-    		return redirect('post_detail', post_id)
+            return redirect('post_detail', post_id)
     else:
-    	form = CommentForm()
+        form = CommentForm()
     context = {
         'post': post,
         'form': form,
     }
-        
 
     return render(request, 'blog/post_detail.html', context)
 
@@ -57,7 +55,8 @@ def add_post(request):
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('add_post'))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add post. Please ensure the form\
+                is valid.')
     else:
         form = PostForm()
 
@@ -85,25 +84,7 @@ def edit_post(request, post_id):
 
 def delete_post(request, post_id):
     """ Delete a product from the store """
-    post =  get_object_or_404(Post, pk=post_id)
+    post = get_object_or_404(Post, pk=post_id)
     post.delete()
     messages.success(request, 'Post deleted!')
     return redirect(reverse('blog'))
-
-
-
-
-
-
-	
-
-
-
-
-		
-
-
-
-
-
-

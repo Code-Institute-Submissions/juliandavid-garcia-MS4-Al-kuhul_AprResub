@@ -232,7 +232,8 @@ The Html code was validated by URI using the [Markup Validation Service](https:/
 No errors found in the css files
 
 ## Js hint Validator
-![JavaScript](/Readme_images/)
+![JavaScript](/Readme_images/31-js-statics.JPG)
+![JavaScript](/Readme_images/32-js-chechout.JPG)
 
 ## pep8 Python Validator
 

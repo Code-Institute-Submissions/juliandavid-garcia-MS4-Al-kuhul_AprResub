@@ -1,8 +1,7 @@
+
 .background{
     background-color: #ebebeb;
 }
-/* ------------------------------------------------------*/
-
 html {
     height: 100%;
 }
@@ -384,93 +383,93 @@ a:hover{
 
 
 @media (max-width: 992px){
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 112px;
-    margin-top: 385px;
-    border-radius: 10px;
-}
-#image-detail{
-    margin-bottom: -30%;
+    .shop-now-button {
+        background: black;
+        color: white;
+        min-width: 112px;
+        margin-top: 385px;
+        border-radius: 10px;
     }
+    #image-detail{
+        margin-bottom: -30%;
+        }
 }
 
 @media only screen and (width: 768px) {
-.marg {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-    text-align: center;
-    margin-left: -2%;
-    margin-top: 40%;
-}
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 112px;
-    margin-top: 213px;
-    border-radius: 10px;
-    margin-left: 10%;
-}
-#home-text{
-    display: none !important;
-}
-#image-detail{
-    margin-top: 30%;
+    .marg {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 40px;
+        text-align: center;
+        margin-left: -2%;
+        margin-top: 40%;
     }
+    .shop-now-button {
+        background: black;
+        color: white;
+        min-width: 112px;
+        margin-top: 213px;
+        border-radius: 10px;
+        margin-left: 10%;
+    }
+    #home-text{
+        display: none !important;
+    }
+    #image-detail{
+        margin-top: 30%;
+        }
 }
 @media only screen and (width: 820px){
-#image-detail{
-    margin-top: 30%;
-    }
+    #image-detail{
+        margin-top: 30%;
+        }
 }
 @media only screen and (width: 912px){
-#image-detail{
-    margin-top: 20%;
-    }
+    #image-detail{
+        margin-top: 20%;
+        }
 }
 @media only screen and (width: 1024px) {
-.marg {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    text-align: center;
-    margin-left: -30%;
-    margin-top: 54px;
-}
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 112px;
-    margin-top: 5%;
-    border-radius: 10px;
-    margin-left: 19%;
-}
-#image-detail{
-    margin-top: 30%;
+    .marg {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+        margin-left: -30%;
+        margin-top: 54px;
     }
+    .shop-now-button {
+        background: black;
+        color: white;
+        min-width: 112px;
+        margin-top: 5%;
+        border-radius: 10px;
+        margin-left: 19%;
+    }
+    #image-detail{
+        margin-top: 30%;
+        }
 }
 
 
 @media only screen and (width: 1280px) {
- .shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
-    margin-left: -9%;
-}
-.marg {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-    text-align: center;
-    margin-left: -63%;
-    margin-top: 0%;
-}
-#image-detail{
-    margin-top: 30%;
+    .shop-now-button {
+        background: black;
+        color: white;
+        min-width: 260px;
+        margin-left: -9%;
     }
+    .marg {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 40px;
+        text-align: center;
+        margin-left: -63%;
+        margin-top: 0%;
+    }
+    #image-detail{
+        margin-top: 30%;
+        }
 }
 /* galaxy fold */
 @media (width: 280px) {
