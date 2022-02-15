@@ -207,7 +207,37 @@ In the header of the site there is a link called "My account" there users find t
 
 <span id="Code-validators"></span>
 
-## 3. Code validators
+## 3. Code validators:
+## Testing ##
+
+- All the features of this project have been manually tested  in order to make sure they respond effectively. Moreover, users can move from page to page since all of them are interconnected. 
+
+
+As part of the testing process, this website was tested using:
+ - [W3C Markup Validator](https://validator.w3.org/) 
+ - [Jigsaw W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [Jshint](https://jshint.com/)
+- [Pep8](http://pep8online.com/) 
+
+## W3C Markup Validator
+
+![Html](/Readme_images/29-base_validation.JPG)
+
+The Html code was validated by URI using the [Markup Validation Service](https://validator.w3.org/#validate_by_input). Therefore, the address of the deployed site was used to achive the validation. The errors found correspond to the jinja tool used.
+
+## W3C CSS Validator
+
+![CSS](/Readme_images/30-CSS.JPG)
+
+No errors found in the css files
+
+## Js hint Validator
+![JavaScript](/Readme_images/)
+
+## pep8 Python Validator
+- When validating the python code there is a warning i could not get rid of. It says "no newline at end of file".
+![Python](/Readme_images/)
+
 
 ## 4. Responsiveness:
 
