@@ -7,16 +7,16 @@
 - <a href="#Code-validators">3. Code validators</a>
 - <a href="#Responsiveness">4. Responsiveness</a>
 - <a href="#Browser-compability">5. Browser compability</a>
-- <a href="#Credits">6. Bugs</a>
+- <a href="#bugs">6. Bugs</a>
 
 
 
-<span id="#Manual-testing"></span>
+<span id="Manual-testing"></span>
 ## 1. Manual testing:
 
 **The following user stories were tested manually.**
 
-<span id="#Project"></span>
+<span id="Project"></span>
 
 ### 1. 1 Testing Project goals
 - Sell alcoholic drinks online.
@@ -56,7 +56,7 @@ The administrators of the site can add, read, edit, and delete not only products
 
 **Result:** Test passed
 
-<span id="#User-story"></span>
+<span id="User-story"></span>
 ### 1. 2 Testing  User Stories
 ### As a first time visitor I want:
 
@@ -182,7 +182,7 @@ In the header of the site there is a link called "My account" there users find t
 
 **Result:** Test passed
 
-<span id="#Admin-story"></span>
+<span id="Admin-story"></span>
 ### As a Administrator user I want:
 - To have access to the list of orders placed in the website
 **Testing**
@@ -198,20 +198,31 @@ In the header of the site there is a link called "My account" there users find t
  
 **Result:** Test passed
 
-<span id="#Automated-testing"></span>
-## 3. Automates Testing:
+<span id="Automated-testing"></span>
+
+## 2. Automates Testing:
+
+
+<span id="Responsiveness"></span>
+
+<span id="Code-validators"></span>
+
+## 3. Code validators
 
 ## 4. Responsiveness:
-<span id="#Responsiveness"></span>
+
 ![Responsiveness](/Readme_images/27-responsiveness-1.JPG)
 ![Responsiveness](/Readme_images/28-responsiveness-2.JPG)
 
+## 5. Browser-compability
+<span id="Browser-compability"></span>
+![Responsiveness](/Readme_images/28-Browser.JPG)
 
-<span id="#Browser-compability"></span>
+## 6. Bugs
+<span id="bugs"></span>
 
-<span id="#Credits"></span>
-<span id="#Browser-compability"></span>
-<span id="#Code-validators"></span>
+## 7. Credits
+<span id="Credits"></span>
 
 
 
