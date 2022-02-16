@@ -202,8 +202,7 @@ In the header of the site there is a link called "My account" there users find t
 
 ## 2. Automates Testing:
 
-
-<span id="Responsiveness"></span>
+![Performance](/Readme_images/33-lighthouse.JPG)
 
 <span id="Code-validators"></span>
 
@@ -236,7 +235,8 @@ No errors found in the css files
 ![JavaScript](/Readme_images/32-js-chechout.JPG)
 
 ## pep8 Python Validator
-
+All the .py files were validated with the pep8 validator. Some of the error found while the validation were related to the lenght of the lines of some indententations
+all the erros found were corrected
 ![Python](/Readme_images/)
 
 
