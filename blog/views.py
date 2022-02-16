@@ -71,7 +71,22 @@ def add_post(request):
 def edit_post(request, post_id):
     """ Edit a post in the Blog """
     post = get_object_or_404(Post, pk=post_id)
-    form = PostForm(instance=post)
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        # check if form is valid
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Post successfully updated!')
+            return redirect(reverse('blog'))
+        # form is not valid
+        else:
+            messages.error(request, 'Failed to update post.' +
+                           'Please ensure the form is valid.')
+    # get form
+    else:
+        form = PostForm(instance=post)
+        messages.info(request, 'You are editing your post' +
+                      f'{post.title}')
 
     template = 'blog/edit_post.html'
     context = {

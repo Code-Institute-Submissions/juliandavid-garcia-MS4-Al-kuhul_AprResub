@@ -8,6 +8,7 @@
 - <a href="#Responsiveness">4. Responsiveness</a>
 - <a href="#Browser-compability">5. Browser compability</a>
 - <a href="#bugs">6. Bugs</a>
+- <a href="#credits">7. Credits</a>
 
 
 
@@ -255,7 +256,7 @@ all the erros found were corrected
 During the development
 
 ## 7. Credits
-<span id="Credits"></span>
+<span id="credits"></span>
 
 
 
