@@ -252,6 +252,8 @@ all the erros found were corrected
 ## 6. Bugs
 <span id="bugs"></span>
 
+During the development
+
 ## 7. Credits
 <span id="Credits"></span>
 
