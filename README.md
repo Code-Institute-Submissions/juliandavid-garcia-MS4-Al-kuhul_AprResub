@@ -162,12 +162,12 @@ This website was built using:
 ## 4. Testing 
 - [Testing](/Readme_files/testing.md)
 
-
-## 5.  Deployment
 <span id=" Deployment"></span>
+## 5.  Deployment
 
-- [5.1 Heroku Deployment](/Readme_files/deployment_heroku.md)
 <span id="heroku_Deployment"></span>
+- [5.1 Heroku Deployment](/Readme_files/deployment_heroku.md)
+
 
 - [5.2 Hosting static and media files with AWS](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
 <span id="AWS"></span>
@@ -175,8 +175,9 @@ This website was built using:
 - [5.3 Github Clonning](/Readme_files/cloning_guthub.md)
 <span id="Clonning"></span>
 
-##  6. Models
 <span id="models"></span>
+##  6. Models
+
 - [Models](/Readme_files/models.md)
 
 ##  7. Credits

@@ -81,3 +81,5 @@ So that Heroku won't try to collect static files when we deploy.**
 - **Search your depository and connect your project and enable the automatic deplyment from guthub** 
 
 ![folder name](/Readme_images/19-automatic-deploy.JPG)
+
+- [Back to read me](/README.md)

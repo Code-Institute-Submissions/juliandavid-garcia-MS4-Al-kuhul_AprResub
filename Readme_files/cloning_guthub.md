@@ -32,3 +32,5 @@
 - **Go to the archive where you decided to save your cloned document and you will have your cloned document there..**
 
 ![Cloned](/Readme_images/26-template.JPG)
+
+- [Back to read me](/README.md)
