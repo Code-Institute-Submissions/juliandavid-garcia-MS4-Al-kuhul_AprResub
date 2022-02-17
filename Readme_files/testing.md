@@ -8,7 +8,7 @@
 - <a href="#Responsiveness">4. Responsiveness</a>
 - <a href="#Browser-compability">5. Browser compability</a>
 - <a href="#bugs">6. Bugs</a>
-- <a href="#credits">7. Credits</a>
+
 
 
 
@@ -265,19 +265,15 @@ Here there is a list of some of the bugs found during the development of this si
  - When connecting webhooks i got the 401 error 
 **Solution:**
    After having set the webhook adjust the development browser to public in order fix this error
+   
  **Bug 3:**
 - when exporting the fixtures some images were not exported therefore i had migrate changes to the POSTGRES database.
 **Solution:**
 Copy your DATABASE_URL from the Heroku config vars
 type the command export DATABASE_URL="https://al-kuhul.herokuapp.com/" in the Gitpod terminal to connect in the same terminal, run the migrate command.
 
- **Bug 4:**
-**Solution:**
- **Bug 5:**
-**Solution:**
 
-## 7. Credits
-<span id="credits"></span>
+- [Back to read me](/README.md)
 
 
 

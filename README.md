@@ -12,10 +12,11 @@
   - <a href="#heroku_Deployment">5.1 Heroku Deployment</a>
   - <a href="#AWS">5.2 Hosting statics</a>
   - <a href="#Clonning">5.3 To Clone</a>
-- <a href="#Credits">6. Credits</a>
-- <a href="#Media">7. Media</a>
-- <a href="#Acknowledgements">8. Acknowledgements</a>
-- <a href="#Github">9. 9. Github</a>
+- <a href="#models">6. Models</a>
+- <a href="#Credits">7. Credits</a>
+- <a href="#Media">8. Media</a>
+- <a href="#Acknowledgements">9. Acknowledgements</a>
+- <a href="#Github">10. Github</a>
 <span id="ux"></span>
 ##  1. UX
 <span id="Project"></span>
@@ -174,8 +175,11 @@ This website was built using:
 - [5.3 Github Clonning](/Readme_files/cloning_guthub.md)
 <span id="Clonning"></span>
 
+##  6. Models
+<span id="models"></span>
+- [Models](/Readme_files/models.md)
 
-##  6. Credits
+##  7. Credits
 <span id="Credits"></span>
 This website was designed using some of html and css features from the template [ecommerce](https://startbootstrap.com/templates/ecommerce)
 
@@ -193,18 +197,20 @@ All the product images were taken from the online shop:
  The Payment method used in this site is :
  - [Stripe](https://www.stripe/com) 
 
-## 7. Media
+## 8. Media
 <span id="Media"></span>
 All the product images were taken from the online shop: 
  - [Bienmanger](https://www.bienmanger.com/)
  
-## 8. Acknowledgements
+## 9. Acknowledgements
 <span id="Acknowledgements"></span>
 - I received inspiration for this project from the previous project(boutique_ado) covered in the previous unit as well from different online shops as [Bienmanger](https://www.bienmanger.com/)
 
 - Thanks to Precious Ijege for his mentoring while developing this project. His advices, patience and support were of high relevance to carry out this project.
 
-## 9. Github
+- I would also like to thanks james, jo, and all those tutors from student care as well as those members of the slack community who were always willing to help. 
+
+## 10. Github
 <span id="Github"></span>
 You can find this project on 
 [My Github](https://github.com/juliandavid-garcia)
