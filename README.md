@@ -176,6 +176,7 @@ This website was built using:
 <span id="Clonning"></span>
 
 <span id="models"></span>
+
 ##  6. Models
 
 - [Models](/Readme_files/models.md)
@@ -197,6 +198,14 @@ All the product images were taken from the online shop:
 
  The Payment method used in this site is :
  - [Stripe](https://www.stripe/com) 
+
+ The image of  the landing page was taken from :
+ - [Unsplash](https://unsplash.com/photos/I2f5BbeXPVY)
+
+ The Blog was developed taking into account the following example  :
+ - [Blog model](https://djangocentral.com/building-a-blog-application-with-django/)
+
+
 
 ## 8. Media
 <span id="Media"></span>
