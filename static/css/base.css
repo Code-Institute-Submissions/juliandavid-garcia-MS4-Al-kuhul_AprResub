@@ -229,6 +229,9 @@ a:hover{
     border-color: #0000!important;
 }
 
+#footer{
+    position: fixed;
+}
 
 /* -------------------------------- Media Queries */
 
