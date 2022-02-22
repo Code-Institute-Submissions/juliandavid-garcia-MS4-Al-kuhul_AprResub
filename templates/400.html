@@ -3,21 +3,21 @@
 {% block extra_title %}| 400 {% endblock %}
 
 {% block content %}
-<div class="overlay">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="text-center">
-                    <h1 class="display-1">400</h1>
-                    <p class="lead">Unauthorized</p>
-                    <p>Your request is incorrect or corrupt!</p>
-                    <a href="{% url 'home' %}">
-                        <i class="fas fa-arrow-left me-1"></i>
+<div class="overlay"></div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="text-center">
+                <h1 class="display-1">400</h1>
+                <p class="lead">Unauthorized</p>
+                <p>Your request is incorrect or corrupt!</p>
+                <a href="{% url 'home' %}">
+                    <i class="fas fa-arrow-left me-1"></i>
                         Return to the home page
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
